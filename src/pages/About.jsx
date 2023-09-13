@@ -3,6 +3,7 @@ import Navbar from "../layouts/Navbar";
 
 import History from "../assets/history.png";
 import Journey from "../../src/assets/journey.png";
+import Footer from "../layouts/Footer";
 
 function About() {
   return (
@@ -22,7 +23,7 @@ function About() {
         </div>
       </div>
       <h3 className="text-center font-bold text-3xl lg:mt-5 mt-16 underline">Journey</h3>
-      <div className="grid lg:grid-cols-2 gap-4 justify-items-center mt-8">
+      <div className="grid lg:grid-cols-2 gap-4 justify-items-center mt-3">
         <div className="mx-10 self-center lg:order-1 order-2 lg:text-left text-justify">
           <p>
           Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. 
@@ -35,6 +36,7 @@ function About() {
           <img src={Journey} alt="journey" className="w-auto" />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

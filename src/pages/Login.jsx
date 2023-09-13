@@ -24,9 +24,9 @@ const Login = () => {
       <div
         className="h-screen overflow-hidden flex items-center justify-center"
       >
-        <div className="bg-white lg:w-6/12 md:7/12 w-8/12 shadow-3xl border border-gray-300">
+        <div className="bg-white lg:w-6/12 md:7/12 w-8/12 shadow-3xl border border-blue-600">
           <form className="p-12 md:p-24" action="/">
-            <h2 className="text-center font-bold lg:text-4xl text-2xl mb-10">
+            <h2 className="text-center font-bold lg:text-4xl text-2xl mb-10 underline">
               LOGIN
             </h2>
             <div className="mt-3 mb-2">

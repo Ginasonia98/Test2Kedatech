@@ -9,6 +9,7 @@ const initialState = {
         { text: "Mencatat barang keluar" },
         { text: "Mencatat hasil keuntungan" },
       ],
+      price: "Rp 1.000.000/month", // Add the price here
     },
     {
       title: "BUSINESS",
@@ -18,6 +19,7 @@ const initialState = {
         { text: "Dapat menganalisa hasil penjualan dengan CHART" },
         { text: "Support 7x24 Jam" },
       ],
+      price: "Rp 3.000.000/month", // Add the price here
     },
     {
       title: "ENTREPRENEUR",
@@ -29,9 +31,11 @@ const initialState = {
         { text: "Export data ke Excel" },
         { text: "AI Prediksi penghasilan" },
       ],
+      price: "Rp 5.000.000/month", // Add the price here
     },
   ],
 };
+
 
 const pricingSlice = createSlice({
   name: 'pricing',

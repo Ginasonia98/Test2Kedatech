@@ -8,7 +8,7 @@ const ErrorPage = () => {
       <button
         className="mt-4 p-2 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
         onClick={() => {
-          window.location.href = "/http://localhost:3000/";
+          window.location.href = "/login";
         }}
       >
         Kembali ke Beranda

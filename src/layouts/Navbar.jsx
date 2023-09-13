@@ -22,17 +22,17 @@ const Navbar = () => (
         <div className="text-sm lg:flex-grow"></div>
         <div className="lg:mt-0 mt-5">
           <div className="lg:hidden">
-            <div className="block lg:text-black text-white font-bold lg:text-3xl text-lg  mt-2">
+            <div className="block  text-black font-bold lg:text-3xl text-lg  mt-2">
               <Link to={"/about"}>ABOUT</Link>
             </div>
-            <div className="block lg:text-black text-white font-bold lg:text-3xl text-lg mt-2">
+            <div className="block text-black font-bold lg:text-3xl text-lg mt-2">
               <Link to={"/pricing"}>PRICING</Link>
             </div>
-            <div className="block lg:text-black text-white font-bold lg:text-3xl text-lg mt-2">
+            <div className="block text-black font-bold lg:text-3xl text-lg mt-2">
               <Link to={"/contact"}>CONTACT</Link>
             </div>
             <div
-              className={`block px-12 text-center w-32 text-xl py-3 leading-none border rounded lg:text-blue-400 text-white border-blue-400 lg:border-blue-400 border-teal mt-4`}
+              className={`block px-12 text-center w-32 text-xl py-3 leading-none border rounded text-blue-600 border-blue-600 border-teal mt-4`}
             >
               <Link to={"/login"}>LOGIN</Link>
             </div>
@@ -48,7 +48,7 @@ const Navbar = () => (
               <Link to={"/contact"}>CONTACT</Link>
             </div>
             <div
-              className={`inline-block px-12 text-xl py-3 leading-none border rounded lg:text-blue-400 text-white border-blue-400 lg:border-blue-400 mt-4 lg:mt-0 lg:ml-12 ml-0`}
+              className={`inline-block px-12 text-xl py-3 leading-none border rounded lg:text-blue-600 text-white border-blue-600 mt-4 lg:mt-0 lg:ml-12 ml-0`}
             >
               <Link to={"/login"}>LOGIN</Link>
             </div>

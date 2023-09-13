@@ -2,8 +2,9 @@ import React from "react";
 import Navbar from "../layouts/Navbar";
 import Metrics from "../../src/assets/metrics.png";
 import waveImg from "../../src/assets/wave.png";
+import Footer from "../layouts/Footer";
 
-function Home() {
+const Home = () => {
   return (
     <div>
       <Navbar />
@@ -25,8 +26,10 @@ function Home() {
           <img src={waveImg} alt="waveImg" className="" />
         </div>
       </div>
+      <Footer/>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
+
