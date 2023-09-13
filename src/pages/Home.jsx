@@ -9,7 +9,7 @@ function Home() {
       <Navbar />
       <div className="flex justify-center lg:mt-12 mt-24">
         <h3 className="text-center w-96">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         </h3>
       </div>
       <div className="lg:grid grid-rows-2 grid-flow-col justify-between  lg:mt-40 mt-10">
