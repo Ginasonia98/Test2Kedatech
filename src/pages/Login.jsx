@@ -23,9 +23,8 @@ const Login = () => {
     <div>
       <div
         className="h-screen overflow-hidden flex items-center justify-center"
-        style={{ backgroundColor: "#21BFF7" }}
       >
-        <div className="bg-white lg:w-6/12 md:7/12 w-8/12 shadow-3xl">
+        <div className="bg-white lg:w-6/12 md:7/12 w-8/12 shadow-3xl border border-gray-300">
           <form className="p-12 md:p-24" action="/">
             <h2 className="text-center font-bold lg:text-4xl text-2xl mb-10">
               LOGIN
@@ -69,9 +68,9 @@ const Login = () => {
             </button>
           </form>
           <p className="text-center">
-            Belum memiliki akun?{" "}
+            Dont have account?{" "}
             <a href="/register" className="text-blue-500">
-              Silahkan daftar disini
+              Register Now
             </a>
           </p>
         </div>
