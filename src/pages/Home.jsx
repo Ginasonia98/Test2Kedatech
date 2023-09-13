@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../layouts/Navbar";
-import sectionImg from "../../src/assets/section-home-1.svg";
+import Metrics from "../../src/assets/metrics.png";
 import waveImg from "../../src/assets/wave.png";
 
 function Home() {
@@ -15,11 +15,11 @@ function Home() {
       <div className="lg:grid grid-rows-2 grid-flow-col justify-between  lg:mt-40 mt-10">
         <div className="justify-self-center text-center mx-10">
           <p>
-            <i>"Lorem ipsum dolor sit, amet consectetur adipisicing"</i>
+            <i>"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"</i>
           </p>
         </div>
         <div className="justify-self-center mx-10">
-          <img src={sectionImg} alt="sectionImg" className="w-64" />
+          <img src={Metrics} alt="sectionImg" className="w-64" />
         </div>
         <div className="row-span-2">
           <img src={waveImg} alt="waveImg" className="" />
