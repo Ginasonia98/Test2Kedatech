@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   pricingData: [
@@ -34,13 +34,26 @@ const initialState = {
       price: "Rp 5.000.000/month", // Add the price here
     },
   ],
+  users: [],
+  currentUser: null,
 };
 
-
 const pricingSlice = createSlice({
-  name: 'pricing',
+  name: "pricing",
   initialState,
-  reducers: {},
+  reducers: {
+    addUser: (state, action) => {
+      state.users.push(action.payload);
+    },
+    loginUser: (state, action) => {
+      state.currentUser = action.payload;
+    },
+    logoutUser: (state) => {
+      state.currentUser = null;
+    },
+    // ... (other reducers for pricing data)
+  },
 });
 
+export const { addUser, loginUser, logoutUser /* other actions */ } = pricingSlice.actions;
 export default pricingSlice.reducer;

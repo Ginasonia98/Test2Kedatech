@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate dari react-router-dom
+import { useDispatch,useSelector } from 'react-redux';
+import { addUser } from '../redux/slices/pricingSlice';
 
 
 const Register = () => {
@@ -9,15 +11,27 @@ const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const navigate = useNavigate(); // Inisialisasi useNavigate
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.pricing.users);
 
-  const handleLogin = () => {
-    if (!email.includes("@") || !email.includes(".com") || password.length < 6) {
-      setErrorMessage("Email atau password salah.");
-      navigate("/errorpage"); // Arahkan ke halaman error jika login gagal
+  const handleRegister = () => {
+    const isEmailRegistered = users.some((user) => user.email === email);
+
+    if (isEmailRegistered) {
+      setErrorMessage('Email is already registered.');
     } else {
-      setErrorMessage("");
-      setSuccessMessage("Welcome in the web!");
-      navigate("/login"); // Arahkan ke halaman beranda jika berhasil login
+      setErrorMessage('');
+      setSuccessMessage('Registration successful!');
+
+      dispatch(
+        addUser({
+          username,
+          email,
+          password,
+        })
+      );
+
+      navigate('/login');
     }
   };
 
@@ -77,7 +91,7 @@ const Register = () => {
             <button
               className="font-medium p-2 md:p-4 text-white uppercase w-full mt-4"
               style={{ backgroundColor: "#21BFF7" }}
-              onClick={handleLogin}
+              onClick={handleRegister}
             >
               Register
             </button>

@@ -1,29 +1,34 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate dari react-router-dom
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../redux/slices/pricingSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
-  const navigate = useNavigate(); // Inisialisasi useNavigate
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.pricing.users);
 
   const handleLogin = () => {
-    if (!email.includes("@") || !email.includes(".com") || password.length < 6) {
-      setErrorMessage("Email atau password salah.");
-      navigate("/errorpage"); // Arahkan ke halaman error jika login gagal
+    const user = users.find(
+      (u) => u.email === email && u.password === password
+    );
+
+    if (!user) {
+      setErrorMessage("Email or password is incorrect.");
     } else {
       setErrorMessage("");
-      setSuccessMessage("Welcome in the web!");
-      navigate("/"); // Arahkan ke halaman beranda jika berhasil login
+      dispatch(loginUser(user)); // Store the logged-in user in Redux state
+      navigate("/"); // Redirect to the home page if login is successful
     }
   };
 
   return (
     <div>
-      <div
-        className="h-screen overflow-hidden flex items-center justify-center"
-      >
+      <div className="h-screen overflow-hidden flex items-center justify-center">
         <div className="bg-white lg:w-6/12 md:7/12 w-8/12 shadow-3xl border border-blue-600">
           <form className="p-12 md:p-24" action="/">
             <h2 className="text-center font-bold lg:text-4xl text-2xl mb-10 underline">
@@ -59,13 +64,16 @@ const Login = () => {
             {successMessage && (
               <p className="text-green-500">{successMessage}</p>
             )}
-            <button
-              className="font-medium p-2 md:p-4 text-white uppercase w-full mt-4"
-              style={{ backgroundColor: "#21BFF7" }}
-              onClick={handleLogin}
-            >
-              Login
-            </button>
+            <div>
+              <button
+                className="font-medium p-2 md:p-4 text-white uppercase w-full mt-4"
+                style={{ backgroundColor: "#21BFF7" }}
+                onClick={handleLogin}
+                disabled={!email || !password} // Disable the button if fields are empty
+              >
+                Login
+              </button>
+            </div>
           </form>
           <p className="text-center">
             Dont have account?{" "}
@@ -80,4 +88,3 @@ const Login = () => {
 };
 
 export default Login;
-
